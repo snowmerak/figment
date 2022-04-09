@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  message:
+    image: "nats:2.7"
+
+networks:
+  queue:
