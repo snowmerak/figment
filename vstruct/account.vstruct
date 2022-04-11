@@ -1,1 +1,12 @@
+enum Action {
+    CREATE,
+    UPDATE,
+    DELETE,
+}
 
+struct Account {
+    string email;
+    string name;
+    bytes public_key;
+    bytes signature;
+}
