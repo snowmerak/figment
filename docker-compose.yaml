@@ -1,7 +1,27 @@
 version: "3.9"
 services:
-  message:
+  account.mq:
+    restart: always
     image: "nats:2.7"
+    ports:
+      - 4222:4222
+    networks:
+      - account.network
+
+  account.db:
+    restart: always
+    image: "postgres:14"
+    volumes:
+      - ./accountdb:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=snowman
+      - POSTGRES_PASSWORD=snowflake
+      - POSTGRES_DB=account
+    networks:
+      - account.network
 
 networks:
-  queue:
+  account.network:
+  account.queue:
