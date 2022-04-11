@@ -5,6 +5,7 @@ enum Action {
 }
 
 struct Account {
+    Action action;
     string email;
     string name;
     bytes public_key;
