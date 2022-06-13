@@ -1,0 +1,13 @@
+@startuml blueprint
+
+Actor user
+
+cloud SendServer
+cloud RecvServer
+
+SendServer -> user: send message
+user -> RecvServer: send message
+
+
+
+@enduml
